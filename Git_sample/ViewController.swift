@@ -12,7 +12,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+         let textLabel = makeTextLable()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        self.view.addSubview(textLabel)
+    }
+    
+    func makeTextLable() -> UILabel{
         
         let textLabel = UILabel(frame: CGRectMake(0, 0, 300, 100))
         textLabel.layer.position = CGPoint(x: self.view.bounds.width / 2, y: self.view.bounds.height / 2)
@@ -24,7 +30,7 @@ class ViewController: UIViewController {
         textLabel.textAlignment = NSTextAlignment.Center
         textLabel.layer.masksToBounds = true
         textLabel.layer.cornerRadius = 20.0
-        self.view.addSubview(textLabel)
+        return textLabel
     }
 
     override func didReceiveMemoryWarning() {
